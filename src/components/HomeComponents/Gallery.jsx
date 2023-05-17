@@ -10,7 +10,7 @@ const Gallery = () => {
         <p className="text-lg ">
           These are the most loved toys by kids. It bring's joy and a sense of
           peace in your kids heart. <br /> So, buy now from{" "}
-          <span className="font-semibold text-orange-500">Toy At Haert.</span>
+          <span className="font-semibold text-orange-500">Toy At Heart.</span>
         </p>
       </div>
       <div className="grid grid-cols-2 md:grid-cols-3 gap-5 rounded-lg bg-orange-100 p-6">

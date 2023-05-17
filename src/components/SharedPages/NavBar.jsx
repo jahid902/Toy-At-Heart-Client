@@ -43,7 +43,7 @@ const NavBar = () => {
       </div>
       <div className="navbar-center">
         <img src="public/toy-shop.png" className="w-10 h-10" alt="" />
-        <Link to="/" className="btn btn-ghost normal-case text-3xl font-bold text-stone-600"> Toy At Heart</Link>
+        <Link to="/" className="btn btn-ghost normal-case text-3xl font-bold text-orange-500"> Toy At Heart</Link>
       </div>
       <div className="navbar-end">
         <button className="btn btn-ghost btn-circle">

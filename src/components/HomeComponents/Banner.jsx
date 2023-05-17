@@ -13,7 +13,7 @@ const Banner = () => {
       <div className="hero-content text-center text-neutral-content">
         <div className="max-w-3xl space-y-4">
           <h1 className="mb-5 text-5xl font-bold text-orange-200">
-            <span className="text-orange-200 ">Toy At Heart</span> <br /> Discover the
+            <span className="text-orange-400 ">Toy At Heart</span> <br /> Discover the
             Magic of Toys!!!
           </h1>
           <p className="mb-5 text-orange-200 font-semibold">
