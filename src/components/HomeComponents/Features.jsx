@@ -2,7 +2,7 @@ import React from "react";
 
 const Features = () => {
   return (
-    <div>
+    <div className="my-4 md:my-12">
       <div className="text-center space-y-3 mb-6">
         <h1 className="text-5xl font-bold text-orange-400">Our Features</h1>
         <p className="text-lg">
