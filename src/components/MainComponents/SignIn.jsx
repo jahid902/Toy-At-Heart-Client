@@ -1,12 +1,15 @@
-import React, { useState } from "react";
+import React, { useContext, useState } from "react";
 import NavBar from "../SharedPages/NavBar";
 import { Link } from "react-router-dom";
 import SocialButton from "../SharedPages/SocialButton";
+import { AuthContext } from "../../AuthProvider/AuthProvider";
 
 const SignIn = () => {
 
   const [error, setError] = useState("");
   const [success, setSuccess] = useState("");
+
+  const {signInUser} = useContext(AuthContext);
 
 
   const handleSubmit = (e) => {
@@ -15,16 +18,16 @@ const SignIn = () => {
     const email = form.email.value;
     const password = form.password.value;
     
-    // loginUser(email, password)
-    //   .then((result) => {
-    //     const user = result.user;
-    //     setSuccess("successfully logged in");
-    //     navigate(from, { replace: true });
-    //   })
-    //   .catch((error) => {
-    //     console.log(error.message);
-    //     setError("login data didn't match");
-    //   });
+    signInUser(email, password)
+      .then((result) => {
+        const user = result.user;
+        setSuccess("successfully logged in");
+        // navigate(from, { replace: true });
+      })
+      .catch((error) => {
+        console.log(error.message);
+        setError("login data didn't match");
+      });
     form.reset();
     setError("");
     setSuccess("");

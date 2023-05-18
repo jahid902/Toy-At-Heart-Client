@@ -27,6 +27,9 @@ const NavBar = () => {
             className="menu menu-compact dropdown-content mt-3 p-2 shadow bg-stone-400 rounded-box w-52"
           >
             <li >
+              <Link className="text-base font-medium" to="/">Home</Link>
+            </li>
+            <li >
               <Link className="text-base font-medium" to="/allToy">Toys</Link>
             </li>
             <li>

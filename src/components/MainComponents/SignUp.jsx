@@ -1,11 +1,13 @@
-import React, { useState } from "react";
+import React, { useContext, useState } from "react";
 import NavBar from "../SharedPages/NavBar";
 import { Link } from "react-router-dom";
 import SocialButton from "../SharedPages/SocialButton";
+import { AuthContext } from "../../AuthProvider/AuthProvider";
 
 const SignUp = () => {
   const [error, setError] = useState("");
   const [success, setSuccess] = useState("");
+  const {signUpUser} = useContext(AuthContext);
 
   const handleSubmit = (e) => {
     e.preventDefault();
@@ -21,15 +23,14 @@ const SignUp = () => {
       return;
     }
 
-    // registerUser(email, password)
-    //   .then((result) => {
-    //     console.log(result.user);
-    //     setSuccess("Successfully created user");
-    //   })
-    //   .catch((error) => {
-    //     console.log(error.message);
-    //     setError("User not created");
-    //   });
+    signUpUser(email, password)
+      .then((result) => {
+        setSuccess("Successfully created user");
+      })
+      .catch((error) => {
+        console.log(error.message);
+        setError("User not created");
+      });
     form.reset();
     setError("");
     setSuccess("");
