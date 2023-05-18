@@ -38,6 +38,9 @@ const NavBar = () => {
             <li>
             <Link className="text-base font-medium" to="/blog">Blogs</Link>
             </li>
+            <li>
+            <Link className="text-base font-medium" to="/signUp">Sign up</Link>
+            </li>
           </ul>
         </div>
       </div>
