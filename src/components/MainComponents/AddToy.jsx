@@ -1,9 +1,56 @@
 import React, { useContext } from "react";
 import { AuthContext } from "../../AuthProvider/AuthProvider";
+import Swal from 'sweetalert2';
 
 const AddToy = () => {
 
     const {user} = useContext(AuthContext);
+
+
+    const handlePost = (event) =>{
+        event.preventDefault();
+        const form = event.target;
+        const toyName = form.toyName.value;
+        const toyImage = form.toyImage.value;
+        const price = form.price.value;
+        const rating = form.rating.value;
+        const seller = form.sellerName.value;
+        const quantity = form.quantity.value;
+        const category = form.category.value;
+        const email = form.email.value;
+        const description = form.description.value;
+
+        const toy = {
+            toyName,
+            toyImage,
+            price,
+            rating,
+            seller,
+            quantity,
+            category,
+            email,
+            description
+        }
+        fetch("http://localhost:5000/add-toy",{
+            method: 'POST',
+            headers: {
+                'content-type': 'application/json'
+            },
+            body: JSON.stringify(toy)
+        })
+        .then(res=> res.json())
+        .then(data=> {
+            console.log(data);
+            if(data.insertedId){
+                Swal.fire(
+                    "Your Toy Is Posted!!",
+                    "Keep Adding!! Keep Growing!! Its the way of always Smiling",
+                    'success'
+                  )
+            }
+        })
+        form.reset();
+    }
 
   return (
     <>
@@ -12,7 +59,7 @@ const AddToy = () => {
           Add A Toy
         </h1>
       </div>
-      <div className="my-12 bg-orange-100 p-8 rounded-lg">
+      <form onSubmit={handlePost} className="my-12 bg-orange-200 p-8 rounded-lg">
         {/* main grid div */}
 
         <div className="flex gap-5">
@@ -103,12 +150,12 @@ const AddToy = () => {
               <span className="label-text text-lg font-bold text-orange-500">Toy Category</span>
             </label>
             <select required name="category" className="select select-bordered w-full max-w-xs">
-              <option disabled selected>
+              <option disabled defaultValue="Select Toy Category">
                 Select Toy Category
               </option>
-              <option>Lego</option>
-              <option>Lego2</option>
-              <option>Lego3</option>
+              <option>Lego City</option>
+              <option>Lego Star Wars</option>
+              <option>Lego Cars</option>
             </select>
           </div>
           {/* 2 div between */}
@@ -145,7 +192,7 @@ const AddToy = () => {
             </button>
           </div>
         </div>
-      </div>
+      </form>
     </>
   );
 };
