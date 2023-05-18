@@ -1,8 +1,8 @@
 import React from 'react';
-import Banner from '../HomeComponents/Banner';
-import Gallery from '../HomeComponents/Gallery';
-import BlogPost from '../HomeComponents/BlogPost';
-import Features from '../HomeComponents/Features';
+import Banner from '../HomePageComponents/Banner';
+import Gallery from '../HomePageComponents/Gallery';
+import BlogPost from '../HomePageComponents/BlogPost';
+import Features from '../HomePageComponents/Features';
 
 const Home = () => {
     return (

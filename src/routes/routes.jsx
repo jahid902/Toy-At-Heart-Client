@@ -8,6 +8,7 @@ import MyToy from "../components/MainComponents/MyToy";
 import AddToy from "../components/MainComponents/AddToy";
 import SignIn from "../components/MainComponents/SignIn";
 import SignUp from "../components/MainComponents/SignUp";
+import PrivateRoute from "../PrivateRoute/PrivateRoute";
 
 
 const router = createBrowserRouter([
@@ -30,16 +31,16 @@ const router = createBrowserRouter([
             },
             {
                 path: "/myToy",
-                element: <MyToy></MyToy>
+                element: <PrivateRoute><MyToy></MyToy></PrivateRoute>
             },
             {
                 path: "/addToy",
-                element: <AddToy></AddToy>
-            }
+                element: <PrivateRoute><AddToy></AddToy></PrivateRoute>
+            },
+            
             
         ]
-    },
-
+    },  
     {
         path: "/signIn",
         element: <SignIn></SignIn> 
@@ -48,6 +49,7 @@ const router = createBrowserRouter([
         path: "/signUp",
         element: <SignUp></SignUp>
     }
+   
 ])
 
 export default router;

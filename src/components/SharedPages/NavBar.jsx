@@ -1,7 +1,20 @@
-import React from "react";
+import React, { useContext } from "react";
 import { Link } from "react-router-dom";
+import { AuthContext } from "../../AuthProvider/AuthProvider";
 
 const NavBar = () => {
+  const { user, logOut } = useContext(AuthContext);
+
+  const handleLogOut = () => {
+    logOut()
+      .then((result) => {
+        const user = result.user;
+      })
+      .catch((e) => {
+        const error = e.message;
+      });
+  };
+
   return (
     <div className="navbar bg-orange-200 rounded-md ">
       <div className="navbar-start">
@@ -22,39 +35,75 @@ const NavBar = () => {
               />
             </svg>
           </label>
-          <ul 
+          <ul
             tabIndex={0}
             className="menu menu-compact dropdown-content mt-3 p-2 shadow bg-stone-400 rounded-box w-52"
           >
-            <li >
-              <Link className="text-base font-medium" to="/">Home</Link>
-            </li>
-            <li >
-              <Link className="text-base font-medium" to="/allToy">Toys</Link>
+            <li>
+              <Link className="text-base font-medium" to="/">
+                Home
+              </Link>
             </li>
             <li>
-            <Link className="text-base font-medium" to="/addToy">Add Toys</Link>
+              <Link className="text-base font-medium" to="/allToy">
+                Toys
+              </Link>
             </li>
             <li>
-            <Link className="text-base font-medium" to="/myToy">My Toys</Link>
+              <Link className="text-base font-medium" to="/addToy">
+                Add Toys
+              </Link>
             </li>
             <li>
-            <Link className="text-base font-medium" to="/blog">Blogs</Link>
+              <Link className="text-base font-medium" to="/myToy">
+                My Toys
+              </Link>
             </li>
             <li>
-            <Link className="text-base font-medium" to="/signUp">Sign up</Link>
+              <Link className="text-base font-medium" to="/blog">
+                Blogs
+              </Link>
+            </li>
+            <li>
+              <Link className="text-base font-medium" to="/signUp">
+                Sign up
+              </Link>
+            </li>
+            <li>
+              {user ? (
+                <button
+                  onClick={handleLogOut}
+                  className="text-base font-medium"
+                >
+                  Sign Out
+                </button>
+              ) : (
+                <Link className="text-base font-medium" to="/signIn">
+                  Sign In
+                </Link>
+              )}
             </li>
           </ul>
         </div>
       </div>
       <div className="navbar-center">
         <img src="public/toy-shop.png" className="w-10 h-10" alt="" />
-        <Link to="/" className="btn btn-ghost normal-case text-3xl font-bold text-orange-500"> Toy At Heart</Link>
+        <Link
+          to="/"
+          className="btn btn-ghost normal-case text-3xl font-bold text-orange-500"
+        >
+          {" "}
+          Toy At Heart
+        </Link>
       </div>
       <div className="navbar-end">
-        <button className="btn btn-ghost btn-circle">
-          <img src="public/profile.png" className="w-10 h-10" alt="" />
-        </button>       
+        {user ? (
+          <img  className="w-10 h-10 rounded-full" src={user?.photoURL} alt="" />
+        ) : (
+          <button className="btn btn-ghost btn-circle">
+            <img src="public/profile.png" className="w-10 h-10" alt="" />
+          </button>
+        )}
       </div>
     </div>
   );

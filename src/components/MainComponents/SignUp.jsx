@@ -31,6 +31,7 @@ const SignUp = () => {
         console.log(error.message);
         setError("User not created");
       });
+             
     form.reset();
     setError("");
     setSuccess("");
