@@ -87,7 +87,7 @@ const NavBar = () => {
         </div>
       </div>
       <div className="navbar-center">
-        <img src="public/toy-shop.png" className="w-10 h-10" alt="" />
+        <img src="/toy-shop.png" className="w-10 h-10" alt="" />
         <Link
           to="/"
           className="btn btn-ghost normal-case text-3xl font-bold text-orange-500"
@@ -101,7 +101,7 @@ const NavBar = () => {
           <img  className="w-10 h-10 rounded-full" src={user?.photoURL} alt="" />
         ) : (
           <button className="btn btn-ghost btn-circle">
-            <img src="public/profile.png" className="w-10 h-10" alt="" />
+            <img src="/profile.png" className="w-10 h-10" alt="" />
           </button>
         )}
       </div>

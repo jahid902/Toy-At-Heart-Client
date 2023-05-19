@@ -23,7 +23,7 @@ const ToyTable = ({singleToy,index}) => {
             <td>{price}</td>
             <td>{quantity}</td>
             {
-                user ? <td><Link className="btn btn-outline btn-warning  font-semibold">View Detail</Link></td> :
+                user ? <td><Link to={`/toy/${_id}`} className="btn btn-outline btn-warning  font-semibold">View Detail</Link></td> :
                 <td><Link to="/SignIn" className="btn btn-outline btn-warning font-semibold">Login To view info</Link></td>
             }
           </tr>
