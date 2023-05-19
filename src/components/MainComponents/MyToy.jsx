@@ -51,6 +51,10 @@ const MyToy = () => {
         </h1>
       </div>
 
+     <div className="flex justify-center my-2">
+     <p className="text-lg font-semibold rounded-lg text-orange-500 inline-block p-2 bg-orange-50">sorted by price</p>
+     </div>
+
       <div className="my-12">
         <div className="overflow-x-auto">
           <table className="table w-full">

@@ -5,11 +5,8 @@ import { Link } from "react-router-dom";
 
 const ToyTable = ({singleToy,index}) => {
 
-    const {user} = useContext(AuthContext);
-
-        const {_id, seller, toyName, category, price, quantity } = singleToy;
-
-       
+  const {user} = useContext(AuthContext);
+  const {_id, seller, toyName, category, price, quantity } = singleToy;
 
   return (
     

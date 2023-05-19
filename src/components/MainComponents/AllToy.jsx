@@ -1,15 +1,17 @@
 import React, { useEffect, useState } from "react";
 import ToyTable from "./ToyTable";
 
+
 const AllToy = () => {
   const [allToys, setAllToys] = useState([]);
 
   useEffect(() => {
     fetch("http://localhost:5000/allToys")
       .then((res) => res.json())
-      .then((data) => 
-        setAllToys(data));
+      .then((data) => setAllToys(data));
   }, []);
+
+  
 
   return (
     <div>
@@ -22,24 +24,39 @@ const AllToy = () => {
       <div className="my-12">
         <div className="overflow-x-auto">
           <table className="table w-full">
-            <thead >
+            <thead>
               <tr>
-                <th className="bg-orange-200 font-semibold text-base">Sl No.</th>
-                <th className="bg-orange-200 font-semibold text-base">Seller Name</th>
-                <th className="bg-orange-200 font-semibold text-base">Toy Name</th>
-                <th className="bg-orange-200 font-semibold text-base">Sub-Category</th>
+                <th className="bg-orange-200 font-semibold text-base">
+                  Sl No.
+                </th>
+                <th className="bg-orange-200 font-semibold text-base">
+                  Seller Name
+                </th>
+                <th className="bg-orange-200 font-semibold text-base">
+                  Toy Name
+                </th>
+                <th className="bg-orange-200 font-semibold text-base">
+                  Sub-Category
+                </th>
                 <th className="bg-orange-200 font-semibold text-base">Price</th>
-                <th className="bg-orange-200 font-semibold text-base">Quantity</th>
-                <th className="bg-orange-200 font-semibold text-base">Information</th>
+                <th className="bg-orange-200 font-semibold text-base">
+                  Quantity
+                </th>
+                <th className="bg-orange-200 font-semibold text-base">
+                  Information
+                </th>
               </tr>
             </thead>
 
             {/* to avoid multiple table head rendering for each map */}
 
             {allToys.map((singleToy, i) => (
-              <ToyTable key={singleToy._id} index={i} singleToy={singleToy}></ToyTable>
+              <ToyTable
+                key={singleToy._id}
+                index={i}
+                singleToy={singleToy}
+              ></ToyTable>
             ))}
-
           </table>
         </div>
       </div>

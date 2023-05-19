@@ -10,6 +10,7 @@ import SignIn from "../components/MainComponents/SignIn";
 import SignUp from "../components/MainComponents/SignUp";
 import PrivateRoute from "../PrivateRoute/PrivateRoute";
 import ToyDetail from "../components/MainComponents/ToyDetail";
+import ToyUpdate from "../components/MainComponents/ToyUpdate";
 
 
 const router = createBrowserRouter([
@@ -41,6 +42,10 @@ const router = createBrowserRouter([
             {
                 path: "/toy/:id",
                 element: <ToyDetail></ToyDetail>
+            },
+            {
+                path: "/updateToy/:id",
+                element: <ToyUpdate></ToyUpdate>
             }
             
             
