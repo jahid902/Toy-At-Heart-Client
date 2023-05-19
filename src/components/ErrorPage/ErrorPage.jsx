@@ -17,7 +17,7 @@ const ErrorPage = () => {
       <div className="hero-overlay bg-opacity-70"></div>
       <div className="hero-content text-center text-neutral-content">
         <div className="max-w-md">
-          <h1 className="mb-5 text-5xl text-yellow-300 font-bold">{error.message}</h1>
+          <h1 className="mb-5 text-5xl text-yellow-300 font-bold">{error?.message}</h1>
           <p className="text-3xl text-yellow-300 my-3">
             {status || 404}
           </p>

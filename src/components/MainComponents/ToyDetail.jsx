@@ -25,14 +25,13 @@ const ToyDetail = () => {
 
   return (
     <>
-        <div className="flex justify-center my-6">
-        <h1 className="text-4xl font-bold rounded-lg text-slate-500 inline-block p-3 bg-orange-50">
+        <div className="flex justify-center mt-3">
+        <h1 className="text-4xl font-bold rounded-lg text-slate-500 inline-block p-3 bg-slate-100">
           {toyData?.toyName} Detail
         </h1>
       </div>
-
-      <div className="hero min-h-screen ">
-        <div className="hero-content rounded-md bg-slate-500 flex-col lg:flex-row">
+      <div className="hero min-h-screen">
+        <div className="hero-content rounded-md bg-slate-500 flex-col lg:flex-row p-6 gap-6">
           <img
             src={toyData?.toyImage}
             className="max-w-md h-96 rounded-lg shadow-2xl"
@@ -50,10 +49,10 @@ const ToyDetail = () => {
             </p>
             <div className="flex gap-12 mb-3">
               <p>
-                <strong>Price :</strong> {toyData?.price}
+                <strong>Price :</strong> {toyData?.price}$
               </p>
               <p>
-                <strong>Rating :</strong> {toyData?.rating}
+                <strong>Rating :</strong> {toyData?.rating} Stars
               </p>
             </div>
             <div className="flex gap-12 mb-3">
@@ -61,7 +60,7 @@ const ToyDetail = () => {
                 <strong>Category :</strong> {toyData?.category}
               </p>
               <p>
-                <strong>Quantity :</strong> {toyData?.quantity}
+                <strong>Quantity :</strong> {toyData?.quantity} Pieces
               </p>
             </div>
             <div className="flex gap-12 my-4">

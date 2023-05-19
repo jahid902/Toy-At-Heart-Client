@@ -5,7 +5,7 @@ const Footer = () => {
     <div className="footer p-10  bg-black text-white rounded-md">
       <div>
         <div>
-          <img src="/public/toy-shop.png" className="w-12 h-12 mb-2" alt="" />
+          <img src="/toy-shop.png" className="w-12 h-12 mb-2" alt="" />
           <p>
             Toy At Heart Industries LTD.
             <br />
