@@ -32,7 +32,7 @@ const AllToy = () => {
         <input
           onChange={(e) => setSearchText(e.target.value)}
           type="text"
-          placeholder="Search Toy Name"
+          placeholder="Search Toy"
           className="input input-bordered input-warning w-full max-w-xs"
         />
         <button onClick={handleSearch} className="btn btn-outline btn-warning">Search</button>

@@ -83,6 +83,11 @@ const NavBar = () => {
                 </Link>
               )}
             </li>
+            <li>
+            {
+              user && <p>{user.email}</p>
+            }
+            </li>
           </ul>
         </div>
       </div>
