@@ -1,4 +1,7 @@
 import React from "react";
+import AOS from 'aos';
+import 'aos/dist/aos.css';
+AOS.init();
 
 const BlogPost = () => {
   return (
@@ -12,7 +15,7 @@ const BlogPost = () => {
         </p>
       </div>
       {/* img 1 */}
-        <div className="hero min-h-full bg-slate-300 mb-5 md:mb-12 rounded-lg">
+        <div data-aos="fade-right" data-aos-duration="1500" data-aos-delay="50" className="hero min-h-full bg-slate-300 mb-5 md:mb-12 rounded-lg">
           <div className="hero-content flex-col lg:flex-row">
             <img
               src="https://static.wixstatic.com/media/d54457_c7148d3f7d2f484f8a2c2327ed0218ae~mv2.jpg/v1/fill/w_560,h_396,al_c,q_80,usm_0.66_1.00_0.01,enc_auto/Dad%20smiling%20and%20playing%20a%20toy%20guitar%20with%20his%20young%20daughter.jpg"
@@ -32,7 +35,7 @@ const BlogPost = () => {
           </div>
         </div>
       {/* img 2 */}
-      <div className="hero min-h-full bg-slate-300 mb-5 md:mb-12 rounded-lg">
+      <div data-aos="fade-left" data-aos-duration="1500" data-aos-delay="50" className="hero min-h-full bg-slate-300 mb-5 md:mb-12 rounded-lg">
           <div className="hero-content flex-col lg:flex-row-reverse">
             <img
               src="https://img.freepik.com/premium-photo/vietnamese-parents-children-sittig-floor-living-room-playing-with-plastic-toys-blocks_274689-21428.jpg"

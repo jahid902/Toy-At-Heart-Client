@@ -1,4 +1,7 @@
 import React from "react";
+import AOS from 'aos';
+import 'aos/dist/aos.css';
+AOS.init();
 
 const Gallery = () => {
   return (
@@ -13,7 +16,7 @@ const Gallery = () => {
           <span className="font-semibold text-orange-500">Toy At Heart.</span>
         </p>
       </div>
-      <div className="grid grid-cols-2 md:grid-cols-3 gap-5 rounded-lg bg-orange-100 p-6">
+      <div data-aos="zoom-in-up" data-aos-duration="1000" data-aos-delay="50" className="grid grid-cols-2 md:grid-cols-3 gap-5 rounded-lg bg-orange-100 p-6">
         <div className="h-64 md:h-96 bg-slate-300 rounded-lg">
           <img
             className="object-fit md:object-cover w-full h-full rounded-md mask md:mask-hexagon "

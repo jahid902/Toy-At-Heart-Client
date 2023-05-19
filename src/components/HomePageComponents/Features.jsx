@@ -1,4 +1,7 @@
 import React from "react";
+import AOS from 'aos';
+import 'aos/dist/aos.css';
+AOS.init();
 
 const Features = () => {
   return (
@@ -11,7 +14,7 @@ const Features = () => {
           to make your purchase and overall experience amazing.
         </p>
       </div>
-      <div className="flex flex-col md:flex-row gap-10 md:gap-0 justify-center items-center  bg-orange-100 p-8 ">
+      <div data-aos="flip-down" data-aos-duration="1000" data-aos-delay="150" className="flex flex-col md:flex-row gap-10 md:gap-0 justify-center items-center  bg-orange-100 p-8 ">
         <div className="text-center flex flex-col items-center w-full">
           <img src="/activity.png" className="w-20 h-20" alt="" />
           <h1 className="text-orange-500 font-bold text-lg">Fast Delivery</h1>
