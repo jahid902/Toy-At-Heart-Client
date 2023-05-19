@@ -1,9 +1,9 @@
 import React, { useEffect, useState } from "react";
 import ToyTable from "./ToyTable";
 
-
 const AllToy = () => {
   const [allToys, setAllToys] = useState([]);
+  const [searchText, setSearchText] = useState("");
 
   useEffect(() => {
     fetch("http://localhost:5000/allToys")
@@ -11,7 +11,14 @@ const AllToy = () => {
       .then((data) => setAllToys(data));
   }, []);
 
-  
+    const handleSearch = () => {
+      fetch(`http://localhost:5000/toyText/${searchText}`)
+      .then(res=>res.json())
+      .then(data=>{
+        console.log(data);
+        setAllToys(data);
+      })
+    }
 
   return (
     <div>
@@ -19,6 +26,16 @@ const AllToy = () => {
         <h1 className="text-4xl font-bold rounded-lg text-orange-500 inline-block p-3 bg-orange-100">
           All Lego Toys
         </h1>
+      </div>
+
+      <div className="flex justify-center gap-6 my-6">
+        <input
+          onChange={(e) => setSearchText(e.target.value)}
+          type="text"
+          placeholder="Search Toy Name"
+          className="input input-bordered input-warning w-full max-w-xs"
+        />
+        <button onClick={handleSearch} className="btn btn-outline btn-warning">Search</button>
       </div>
 
       <div className="my-12">
