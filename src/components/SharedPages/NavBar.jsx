@@ -49,16 +49,20 @@ const NavBar = () => {
                 Toys
               </Link>
             </li>
-            <li>
+            {
+              user && <li>
               <Link className="text-base font-medium" to="/addToy">
                 Add Toys
               </Link>
             </li>
-            <li>
+            }
+            {
+              user && <li>
               <Link className="text-base font-medium" to="/myToy">
                 My Toys
               </Link>
             </li>
+            }
             <li>
               <Link className="text-base font-medium" to="/blog">
                 Blogs
@@ -106,7 +110,7 @@ const NavBar = () => {
           <img  className="w-10 h-10 rounded-full" src={user?.photoURL} alt="" />
         ) : (
           <button className="btn btn-ghost btn-circle">
-            <img src="/profile.png" className="w-10 h-10" alt="" />
+            <Link to="/signIn"><img src="/profile.png" className="w-10 h-10" alt="" /></Link>
           </button>
         )}
       </div>

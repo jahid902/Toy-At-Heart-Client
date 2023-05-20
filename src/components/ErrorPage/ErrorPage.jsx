@@ -1,12 +1,11 @@
 import React from "react";
 import { Link, useRouteError } from "react-router-dom";
-import NavBar from "../SharedPages/NavBar";
+
 
 const ErrorPage = () => {
   const { error, status } = useRouteError();
   return (
     <>
-    <NavBar></NavBar>
     <div
       className="hero h-48 md:h-96 mt-8"
       style={{
