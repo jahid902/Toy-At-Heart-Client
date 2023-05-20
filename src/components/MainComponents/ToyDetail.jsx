@@ -1,6 +1,9 @@
 import React, { useEffect, useState } from "react";
 import { Link, useParams } from "react-router-dom";
 import Swal from 'sweetalert2';
+import AOS from 'aos';
+import 'aos/dist/aos.css';
+AOS.init();
 
 const ToyDetail = () => {
   const [toyData, setToyData] = useState({});
@@ -27,7 +30,7 @@ const ToyDetail = () => {
           {toyData?.toyName} Detail
         </h1>
       </div>
-      <div className="hero min-h-screen">
+      <div className="hero min-h-screen my-2 md:my-6" data-aos="zoom-in-up" data-aos-duration="1000" data-aos-delay="50">
         <div className="hero-content rounded-md bg-slate-500 flex-col lg:flex-row p-1 md:p-6 gap-6">
           <img
             src={toyData?.toyImage}
