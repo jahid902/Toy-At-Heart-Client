@@ -8,7 +8,7 @@ const ToyCard = ({ singleToy }) => {
   const { user } = useContext(AuthContext);
 
   return (
-    <div className="card w-full h-96 bg-base-100 shadow-xl p-4">
+    <div className="card w-full h-full md:h-96 bg-base-100 shadow-xl mb-3 md:mb-6 p-1 md:p-4">
       <div className="w-full h-full">
         <img
           className="h-48 w-full object-contain"
@@ -16,7 +16,7 @@ const ToyCard = ({ singleToy }) => {
           alt="toy image"
         />
       </div>
-      <div className="card-body p-5">
+      <div className="card-body p-1 md:p-5">
         <h2 className="card-title">{toyName}</h2>
         <div className="badge badge-warning">
           {price > 250 ? <p>High Priced</p> : <p>Low Priced</p>}

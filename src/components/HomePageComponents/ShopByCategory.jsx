@@ -1,6 +1,9 @@
 import React, { useEffect, useState } from "react";
 import { Tab, TabList, TabPanel, Tabs } from "react-tabs";
 import ToyCard from "./ToyCard";
+import AOS from 'aos';
+import 'aos/dist/aos.css';
+AOS.init();
 
 const ShopByCategory = () => {
   const [activeTab, setActiveTab] = useState("Lego City");
@@ -30,12 +33,12 @@ const ShopByCategory = () => {
         </p>
       </div>
 
-      <div className="flex justify-center bg-slate-300 p-8 rounded-md">
+      <div data-aos="zoom-out-down" data-aos-delay="100" className="flex justify-center bg-slate-300 p-1 md:p-8 rounded-md">
         <Tabs>
           <div className="flex justify-center mb-4">
             <h1 className="text-3xl font-bold text-orange-600 bg-slate-200 p-2 rounded-lg">Lego Toys</h1>
           </div>
-          <TabList className="flex justify-center gap-12 mb-4">
+          <TabList className="flex justify-center gap-4 md:gap-12 mb-4">
             <Tab
               onClick={() => handleTabClick("Lego City")}
               className="cursor-pointer text-xl font-bold text-orange-600 bg-slate-200 hover:bg-slate-600 hover:text-white duration-300 p-2 rounded-lg"
@@ -57,21 +60,21 @@ const ShopByCategory = () => {
           </TabList>
 
           <TabPanel>
-            <div className="flex gap-16 items-center justify-center">
+            <div className="flex gap-5 md:gap-16 items-center justify-center">
               {limitedToy.map((singleToy) => (
                 <ToyCard singleToy={singleToy} key={singleToy._id}></ToyCard>
               ))}
             </div>
           </TabPanel>
           <TabPanel>
-            <div className="flex gap-16 items-center justify-center">
+            <div className="flex gap-5 md:gap-16 items-center justify-center">
               {limitedToy.map((singleToy) => (
                 <ToyCard singleToy={singleToy} key={singleToy._id}></ToyCard>
               ))}
             </div>
           </TabPanel>
           <TabPanel>
-            <div className="flex gap-16 items-center justify-center">
+            <div className="flex gap-5 md:gap-16 items-center justify-center">
               {limitedToy.map((singleToy) => (
                 <ToyCard singleToy={singleToy} key={singleToy._id}></ToyCard>
               ))}
