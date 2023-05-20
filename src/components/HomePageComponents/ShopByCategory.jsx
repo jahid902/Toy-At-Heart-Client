@@ -10,7 +10,7 @@ const ShopByCategory = () => {
   const [limitedToy, setLimitedToy] = useState([]);
 
   useEffect(() => {
-    fetch(`http://localhost:5000/toysCategory/${activeTab}`)
+    fetch(`https://toy-at-heart-server.vercel.app/toysCategory/${activeTab}`)
       .then((res) => res.json())
       .then((data) => setLimitedToy(data));
   }, [activeTab]);

@@ -13,7 +13,7 @@ const ToyDetail = () => {
   const { id } = useParams();
 
   useEffect(() => {
-    fetch(`http://localhost:5000/toy/${id}`)
+    fetch(`https://toy-at-heart-server.vercel.app/toy/${id}`)
       .then((res) => res.json())
       .then((data) => setToyData(data));
   }, []);
