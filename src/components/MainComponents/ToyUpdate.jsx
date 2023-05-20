@@ -1,8 +1,11 @@
 import React from "react";
 import { useParams } from "react-router-dom";
 import Swal from 'sweetalert2';
+import useTitle from "../../Hooks/useTitle";
 
 const ToyUpdate = () => {
+
+  useTitle('Toy-Update');
   const { id } = useParams();
 
   const handleUpdate = (event) => {
@@ -23,7 +26,6 @@ const ToyUpdate = () => {
     })
     .then(res=>res.json())
     .then(data=>{
-        console.log(data);
         if(data.modifiedCount > 0){
             Swal.fire(
                 "Your Toy Is Updated!!",

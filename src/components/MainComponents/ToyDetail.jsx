@@ -3,9 +3,12 @@ import { Link, useParams } from "react-router-dom";
 import Swal from 'sweetalert2';
 import AOS from 'aos';
 import 'aos/dist/aos.css';
+import useTitle from "../../Hooks/useTitle";
 AOS.init();
 
 const ToyDetail = () => {
+
+  useTitle('Toy-Detail')
   const [toyData, setToyData] = useState({});
   const { id } = useParams();
 

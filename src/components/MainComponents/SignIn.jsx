@@ -3,9 +3,11 @@ import NavBar from "../SharedPages/NavBar";
 import { Link, useLocation, useNavigate } from "react-router-dom";
 import SocialButton from "../SharedPages/SocialButton";
 import { AuthContext } from "../../AuthProvider/AuthProvider";
+import useTitle from "../../Hooks/useTitle";
 
 const SignIn = () => {
 
+  useTitle('Sign-In');
   const [error, setError] = useState("");
   const [success, setSuccess] = useState("");
 

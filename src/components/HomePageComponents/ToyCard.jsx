@@ -31,19 +31,11 @@ const ToyCard = ({ singleToy }) => {
           </p>
         </div>
         <div>
-          {user ? (
-            <Link to={`/toy/${_id}`}>
-              <button className="btn btn-outline btn-warning">
-                View Details
-              </button>
-            </Link>
-          ) : (
-            <Link to="/signIn">
-              <button className="btn btn-outline btn-warning">
-                Sign in To View Details
-              </button>
-            </Link>
-          )}
+          <Link to={`/toy/${_id}`}>
+            <button className="btn btn-outline btn-warning">
+              View Details
+            </button>
+          </Link>
         </div>
       </div>
     </div>

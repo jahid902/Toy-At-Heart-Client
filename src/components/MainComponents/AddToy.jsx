@@ -1,10 +1,12 @@
 import React, { useContext } from "react";
 import { AuthContext } from "../../AuthProvider/AuthProvider";
 import Swal from 'sweetalert2';
+import useTitle from "../../Hooks/useTitle";
 
 const AddToy = () => {
 
     const {user} = useContext(AuthContext);
+    useTitle('Add-Toy')
 
 
     const handlePost = (event) =>{
