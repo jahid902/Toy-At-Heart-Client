@@ -16,12 +16,12 @@ const ToyCard = ({ singleToy }) => {
           alt="toy image"
         />
       </div>
-      <div className="card-body p-1 md:p-5">
+      <div className="card-body p-1 md:p-2 ">
         <h2 className="card-title">{toyName}</h2>
         <div className="badge badge-warning">
           {price > 250 ? <p>High Priced</p> : <p>Low Priced</p>}
         </div>
-        <div className="card-actions justify-Start">
+        <div className="card-actions justify-Start mt-1">
           <p>Price : {price}$</p>
           <p>
             Rating: {rating}{" "}
@@ -32,7 +32,7 @@ const ToyCard = ({ singleToy }) => {
         </div>
         <div>
           <Link to={`/toy/${_id}`}>
-            <button className="btn btn-outline btn-warning">
+            <button className="btn btn-active btn-link">
               View Details
             </button>
           </Link>
