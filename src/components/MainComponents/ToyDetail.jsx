@@ -28,10 +28,10 @@ const ToyDetail = () => {
         </h1>
       </div>
       <div className="hero min-h-screen">
-        <div className="hero-content rounded-md bg-slate-500 flex-col lg:flex-row p-6 gap-6">
+        <div className="hero-content rounded-md bg-slate-500 flex-col lg:flex-row p-1 md:p-6 gap-6">
           <img
             src={toyData?.toyImage}
-            className="max-w-md h-96 rounded-lg shadow-2xl"
+            className="max-w-sm md:max-w-md h-96 rounded-lg shadow-2xl"
           />
           <div className="w-3/5 text-white">
             <div className="space-y-3">
@@ -49,7 +49,7 @@ const ToyDetail = () => {
                 <strong>Price :</strong> {toyData?.price}$
               </p>
               <p>
-                <strong>Rating :</strong> {toyData?.rating} Stars
+                <strong>Rating :</strong> {toyData?.rating} <span className="text-yellow-500 font-semibold text-base">Stars</span>
               </p>
             </div>
             <div className="flex gap-12 mb-3">
